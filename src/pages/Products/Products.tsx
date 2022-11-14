@@ -2,8 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import api from '../../api/api';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import * as S from './layout';
+import { AiFillShopping } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
+  const navigate = useNavigate();
   const { data, isLoading } = useQuery(['getProducts'], async () => {
     return await api.getProducts();
   });
@@ -20,6 +23,9 @@ const Products = () => {
             price={product.price}
           />
         ))}
+      <S.CartButton onClick={() => navigate('/cart')}>
+        <AiFillShopping />
+      </S.CartButton>
     </S.Container>
   );
 };

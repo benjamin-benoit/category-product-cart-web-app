@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './pages/Cart/Cart';
 import Products from './pages/Products/Products';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
