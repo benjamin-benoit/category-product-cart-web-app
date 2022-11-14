@@ -1,24 +1,24 @@
-import axios from "axios";
-import { Category, Product } from "./types";
+import axios from 'axios';
+import { Category, Product } from './types';
 
 const instance = axios.create({
-    baseURL: 'localhost:3000',
-})
+  baseURL: 'http://localhost:3000',
+});
 
 const getCategories = () => {
-  return instance.get<Category[]>("/categories");
+  return instance.get<Category[]>('/categories').then(res => res.data);
 };
 
 const getCategory = (id: string) => {
-  return instance.get<Category>(`/categories/${id}`);
+  return instance.get<Category>(`/categories/${id}`).then(res => res.data);
 };
 
 const getProducts = () => {
-  return instance.get<Product[]>("/categories");
+  return instance.get<Product[]>('/products').then(res => res.data);
 };
 
 const getProduct = (id: string) => {
-  return instance.get<Product>(`/categories/${id}`);
+  return instance.get<Product>(`/products/${id}`).then(res => res.data);
 };
 
 const todoService = {
