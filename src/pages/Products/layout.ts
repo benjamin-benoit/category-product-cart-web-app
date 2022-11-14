@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #8fd6bd;
   height: 100vh;
   width: 100%;
   margin: auto;
@@ -9,6 +8,11 @@ export const Container = styled.div`
 `;
 
 export const CartButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
   position: absolute;
   bottom: 25px;
   right: 25px;
@@ -23,4 +27,8 @@ export const CartButton = styled.button`
   &:hover {
     background-color: #509b80;
   }
+`;
+
+export const ArticlesNumber = styled.div`
+  font-size: 14px;
 `;
