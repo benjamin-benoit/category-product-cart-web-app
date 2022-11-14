@@ -17,6 +17,7 @@ const Products = () => {
             label={product.label}
             description={product.description}
             thumbnail_url={product.thumbnail_url}
+            price={product.price}
           />
         ))}
     </S.Container>
