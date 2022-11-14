@@ -11,7 +11,7 @@ export type Product = {
   category_id: string;
   // URL vers l'image miniature
   thumbnail_url: string | null;
-}
+};
 
 export type Category = {
   // Identifiant unique du produit
@@ -22,5 +22,4 @@ export type Category = {
   label: string;
   // Description du produit
   description: string;
-}
-
+};
