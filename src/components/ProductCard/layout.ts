@@ -16,11 +16,11 @@ export const Container = styled.div`
 export const ProductImageContainer = styled.div`
   margin: 10px 0;
   border-right: 1px solid #bcbcbc;
-  margin: auto;
   ${down('md')} {
     width: 90%;
     border-right: none;
     border-bottom: 1px solid #bcbcbc;
+    margin: auto;
   }
 `;
 
