@@ -7,6 +7,13 @@ export const Container = styled.div`
   overflow: auto;
 `;
 
+export const LoadContainer = styled.div`
+  background-color: #fff;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 10px;
+`
+
 export const CartButton = styled.button`
   display: flex;
   flex-direction: column;
