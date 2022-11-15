@@ -14,7 +14,7 @@ const Products = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>();
   const { cart } = useSelector((state: RootState) => state.cart);
-  const { data, isLoading } = useQuery(['getProducts'], async () => {
+  const { data, error, isLoading } = useQuery(['getProducts'], async () => {
     return await api.getProducts();
   });
   const { categoryId } = useParams();
@@ -27,10 +27,18 @@ const Products = () => {
     }
   }, [categoryId, data]);
 
-  return isLoading ? null : (
+  if (error) {
+    // catcher l'erreur vers une app de monitoring ou autre
+    // créer un affichage
+  }
+
+  return (
     <S.Container>
       <Header />
-      {products &&
+      {isLoading ? (
+        <S.LoadContainer>Chargement des produits en cours...</S.LoadContainer>
+      ) : (
+        products &&
         products.map(product => (
           <ProductCard
             key={product.id}
@@ -41,7 +49,8 @@ const Products = () => {
             price={product.price}
             categoryId={product.category_id}
           />
-        ))}
+        ))
+      )}
       <S.CartButton onClick={() => (cart.length > 0 ? navigate('/cart') : null)}>
         <AiFillShopping />
         <S.ArticlesNumber>

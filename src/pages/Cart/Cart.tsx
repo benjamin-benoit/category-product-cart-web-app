@@ -1,7 +1,7 @@
 import * as S from './layout';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { totalAmount } from './utils';
+import { totalAmount } from './hooks';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { IoMdArrowBack } from 'react-icons/io';
