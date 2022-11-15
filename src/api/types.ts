@@ -24,6 +24,6 @@ export type Category = {
   description: string;
 };
 
-export type Cart = Omit<Product, 'description' | 'thumbnail_url' | 'category_id'> & {
+export type Cart = Omit<Product, 'description' | 'thumbnail_url'> & {
   quantity: number;
 };

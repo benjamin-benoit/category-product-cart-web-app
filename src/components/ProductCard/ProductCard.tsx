@@ -10,9 +10,17 @@ interface Props {
   description: string;
   thumbnail_url: string | null;
   price: number;
+  categoryId: string;
 }
 
-const ProductCard = ({ productId, label, description, thumbnail_url, price }: Props) => {
+const ProductCard = ({
+  productId,
+  label,
+  description,
+  thumbnail_url,
+  price,
+  categoryId,
+}: Props) => {
   const dispatch = useDispatch();
 
   return (
@@ -31,6 +39,7 @@ const ProductCard = ({ productId, label, description, thumbnail_url, price }: Pr
               id: productId,
               label,
               price,
+              category_id: categoryId,
             })
           )
         }>
