@@ -21,11 +21,11 @@ const getProduct = (id: string) => {
   return instance.get<Product>(`/products/${id}`).then(res => res.data);
 };
 
-const todoService = {
+const apiService = {
   getCategories,
   getCategory,
   getProducts,
   getProduct,
 };
 
-export default todoService;
+export default apiService;
