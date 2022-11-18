@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { Cart } from '../../api/types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Cart, Product } from '../../api/types';
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -8,7 +8,7 @@ const cartSlice = createSlice({
   },
   reducers: {
     // Ajout
-    addToCart: (state, action) => {
+    addToCart: (state, action: PayloadAction<Omit<Product, 'description' | 'thumbnail_url'>>) => {
       const itemInCart = state.cart.find((item: Cart) => item.id === action.payload.id);
       if (itemInCart) {
         itemInCart.quantity++;

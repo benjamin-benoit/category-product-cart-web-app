@@ -37,8 +37,8 @@ const ProductCard = ({
           dispatch(
             addToCart({
               id: productId,
-              label,
-              price,
+              label: label,
+              price: price,
               category_id: categoryId,
             })
           )
